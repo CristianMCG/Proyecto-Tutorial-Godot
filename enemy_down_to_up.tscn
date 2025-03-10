@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://ux0j2x10re33"]
+
+[ext_resource type="Script" path="res://EnemyDownToUp.cs" id="1_o4kju"]
+[ext_resource type="Texture2D" uid="uid://b52a7d0eaer0k" path="res://dodge_the_creeps_2d_assets/art/enemyFlyingAlt_1.png" id="2_5446o"]
+[ext_resource type="Texture2D" uid="uid://bpo3vp680frxr" path="res://dodge_the_creeps_2d_assets/art/enemyFlyingAlt_2.png" id="3_0g5jx"]
+[ext_resource type="Texture2D" uid="uid://2c5t1t0xchi5" path="res://dodge_the_creeps_2d_assets/art/enemySwimming_1.png" id="4_t3jlq"]
+[ext_resource type="Texture2D" uid="uid://hec2ip0vcyy" path="res://dodge_the_creeps_2d_assets/art/enemySwimming_2.png" id="5_rs408"]
+[ext_resource type="Texture2D" uid="uid://bd8fkpc0mx8t4" path="res://dodge_the_creeps_2d_assets/art/enemyWalking_1.png" id="6_wyvgx"]
+[ext_resource type="Texture2D" uid="uid://tyy67qj431ux" path="res://dodge_the_creeps_2d_assets/art/enemyWalking_2.png" id="7_3s0wa"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yqnaf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5446o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0g5jx")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_t3jlq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rs408")
+}],
+"loop": true,
+"name": &"swim",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_wyvgx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3s0wa")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="EnemyDownToUp" type="Area2D"]
+rotation = 4.71239
+script = ExtResource("1_o4kju")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_yqnaf")
+animation = &"fly"
+frame = 1
+frame_progress = 0.935418

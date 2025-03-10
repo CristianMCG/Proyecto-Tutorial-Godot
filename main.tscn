@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://cxi6p64komu34"]
+
+[ext_resource type="AudioStream" uid="uid://ba5to0q4ded45" path="res://dodge_the_creeps_2d_assets/art/House In a Forest Loop.ogg" id="1_awj86"]
+[ext_resource type="Texture2D" uid="uid://b4tys42dokoa7" path="res://images.jpg" id="1_gkkuy"]
+[ext_resource type="Script" path="res://Main.cs" id="1_jf61n"]
+[ext_resource type="AudioStream" uid="uid://bxpmkrgx0v1df" path="res://dodge_the_creeps_2d_assets/art/gameover.wav" id="4_e70g8"]
+
+[sub_resource type="CSharpScript" id="CSharpScript_fnqek"]
+script/source = "using Godot;
+using System;
+
+public partial class Label : Godot.Label
+{
+	
+	public override void _Ready()
+	{
+	}
+
+	
+	public override void _Process(double delta)
+	{
+	}
+}
+"
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_jf61n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 325)
+scale = Vector2(4.06338, 3.64045)
+texture = ExtResource("1_gkkuy")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_awj86")
+
+[node name="Label" type="Label" parent="."]
+z_index = 200
+offset_left = 554.0
+offset_top = 24.0
+offset_right = 594.0
+offset_bottom = 47.0
+scale = Vector2(3, 3)
+script = SubResource("CSharpScript_fnqek")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_e70g8")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 1027.0
+offset_top = 591.0
+offset_right = 1088.0
+offset_bottom = 639.0
